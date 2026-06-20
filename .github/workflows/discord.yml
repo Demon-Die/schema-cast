@@ -12,5 +12,5 @@ on:
 
 jobs:
   notify:
-    uses: Demon-Die/.github/.github/workflows/discord-notifications.yml@main
+    uses: Demon-Die/.github/workflows/discord-notifications.yml@main
     secrets: inherit
