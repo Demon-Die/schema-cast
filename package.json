@@ -1,54 +1,12 @@
 {
-  "name": "schema-cast",
-  "version": "1.0.0",
-  "description": "Single schema definition → TypeScript + Zod + Mongoose + PostgreSQL. One source of truth.",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
-    }
-  },
-  "bin": {
-    "schema-cast": "dist/cli.js"
-  },
-  "files": [
-    "dist"
+  "name": "schema-cast-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "packages/cloud/*"
   ],
   "scripts": {
-    "build": "tsup",
-    "test": "vitest run",
-    "prepublishOnly": "npm run build"
-  },
-  "keywords": [
-    "typescript",
-    "zod",
-    "mongoose",
-    "postgresql",
-    "codegen",
-    "schema",
-    "developer-tools"
-  ],
-  "author": "",
-  "license": "MIT",
-  "type": "commonjs",
-  "dependencies": {
-    "chokidar": "^5.0.0",
-    "commander": "^15.0.0",
-    "js-yaml": "^4.2.0",
-    "pluralize": "^8.0.0"
-  },
-  "devDependencies": {
-    "@types/js-yaml": "^4.0.9",
-    "@types/node": "^25.9.3",
-    "@types/pluralize": "^0.0.33",
-    "mongoose": "^9.7.0",
-    "tsup": "^8.5.1",
-    "typescript": "^6.0.3",
-    "vitest": "^4.1.9",
-    "zod": "^4.4.3"
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present"
   }
 }
